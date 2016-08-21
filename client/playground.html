@@ -1,0 +1,29 @@
+<template name="playground">
+
+<br><br><br>
+<!-- Remember - if you want to control functions globaly, don't declare them as var. Just name them. -->
+
+<button class="startButton">Start</button><br><br>
+
+<br>Drums		<button class="myButton1">ON</button>
+                    <button class="myButton2">OFF</button>
+<br>Baseline		<button class="myButton3">ON</button>
+                    <button class="myButton4">OFF</button>
+<br>Arp		<button class="myButton5">ON</button>
+                    <button class="myButton6">OFF</button>
+<br>Snare Drum		<button class="myButton7">ON</button>
+                    <button class="myButton8">OFF</button>
+<br>Hihat		<button class="myButton9">ON</button>
+                    <button class="myButton10">OFF</button>
+
+ <br>
+
+ <h2> {{startdac}} {{drums}} {{bass}} {{arp}} {{snaredrum1}} {{hithat2}}</h2>
+
+<br>
+  <div id="slider1"></div>
+  <br>
+  Current Speed = {{sliderVal1}}
+
+
+</template>
