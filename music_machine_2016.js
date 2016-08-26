@@ -4,27 +4,21 @@ MusicMachine = new Mongo.Collection("musicMachine");
 
 
 if (Meteor.isClient) {
-
   Meteor.startup(function () {
-    Session.set('startdac', 0);
+
 });
 
 
   Template.playground.helpers({
 
     "startdac": function () {
-
       var starter = MusicMachine.findOne();
       if (starter) {
         if (starter.start==1) {
           playAll();
 
         }
-        else if (starter.start == 0) {
-          stopAll();
-        }
       }
-
       return Session.get('startdac');
     },
 
@@ -98,9 +92,50 @@ if (Meteor.isClient) {
       }
       return Session.get('hithat2');
     },
-   
 
-    //don't forget the commas between each function
+    "cymbal1": function () {
+      var starter = MusicMachine.findOne();
+      if (starter) {
+        if(starter.cymbal1 == 1) {
+          playCymbal1();
+        }
+        else if (starter.cymbal1 == 0) {
+          stopCymbal1();
+        }
+      }
+      return Session.get('cymbal1');
+    },
+
+
+      "bassdrum1": function () {
+      var starter = MusicMachine.findOne();
+      if (starter)
+      {
+        if(starter.bassdrum1 == 1) {
+          playbassdrum1();
+      }
+      else if (starter.bassdrum1 == 0) {
+        stopbassdrun1();
+      }
+      }
+    return Session.get('bassdrum1');
+  },
+    "break": function () {
+      var starter = MusicMachine.findOne();
+      if (starter) {
+        if(starter.break == 1) {
+          playbreak();
+        }
+        else if (starter.break == 0) {
+          stopbreak();
+        }
+      }
+      return Session.get('break');
+    },
+
+
+
+  //don't forget the commas between each function
 //the last one doesn't have to have one!
 
 
@@ -120,15 +155,12 @@ if (Meteor.isClient) {
 
 
      "click button.startButton": function () {
-
+       Session.set('startdac', 1);
       var val = MusicMachine.findOne({});
       var state = Session.get("startdac");
-       if (val){
+       if (val) {
          if(state == 1){
            MusicMachine.update({ _id: val._id }, {$set: {start: 1}});
-         }
-         else if (state == 0) {
-           MusicMachine.update({ _id: val._id }, {$set: {start: 0}});
          }
        }
 
@@ -197,8 +229,42 @@ if (Meteor.isClient) {
       var val = MusicMachine.findOne({});
       MusicMachine.update({ _id: val._id }, {$set: {hithat2: 0}});
 
-    }
+    },
 
+    "click button.myButton11": function () {
+      Session.set('cymbal1', 1);
+      var val = MusicMachine.findOne({});
+      MusicMachine.update({ _id: val._id }, {$set: {cymbal1: 1}});
+
+    },
+    "click button.myButton12": function () {
+      Session.set('cymbal1', 0);
+      var val = MusicMachine.findOne({});
+      MusicMachine.update({ _id: val._id }, {$set: {cymbal1: 0}});
+    },
+    "click button.myButton13": function () {
+      Session.set('bassdrum1', 1);
+      var val = MusicMachine.findOne({});
+      MusicMachine.update({ _id: val._id }, {$set: {bassdrum1: 1}});
+
+    },
+    "click button.myButton14": function () {
+      Session.set('bassdrum1', 0);
+      var val = MusicMachine.findOne({});
+      MusicMachine.update({ _id: val._id }, {$set: {bassdrum1: 0}});
+    },
+    "click button.myButton15": function () {
+      Session.set('break', 1);
+      var val = MusicMachine.findOne({});
+      MusicMachine.update({ _id: val._id }, {$set: {break: 1}});
+
+    },
+    "click button.myButton16": function () {
+      Session.set('break', 0);
+      var val = MusicMachine.findOne({});
+      MusicMachine.update({ _id: val._id }, {$set: {break: 0}});
+    }
+    
   });
 
   Template.playground.onRendered(function() {
@@ -224,5 +290,4 @@ if (Meteor.isServer) {
       MusicMachine.insert({slide: 50});
 
     }
-
 }
