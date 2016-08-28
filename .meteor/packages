@@ -10,8 +10,8 @@ bgrayburn:processingjs
 mizzao:jquery-ui
 twbs:bootstrap
 fortawesome:fontawesome
-orionjs:bootstrap
 iron:router
+iron:middleware-stack@1.1.0
 meteor-base
 mobile-experience
 mongo
@@ -19,7 +19,6 @@ blaze-html-templates
 session
 jquery
 tracker
-logging
 reload
 random
 ejson
@@ -27,4 +26,5 @@ spacebars
 check
 standard-minifier-css
 standard-minifier-js
-jiku:bootstrap-toggle
+accounts-password
+accounts-ui

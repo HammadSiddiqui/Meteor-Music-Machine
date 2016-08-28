@@ -11,13 +11,14 @@ body {
   left: 0;
   right: 0;
 
-  padding: 0;
+  padding-top: 20px;
   margin: 0;
 
   font-size: 14px;
 }
 
-.container {
+.container1 {
+  padding: 20px;
   max-width: 600px;
   margin: 0 auto;
   min-height: 100%;
@@ -29,6 +30,9 @@ header {
   background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
   padding: 20px 15px 15px 15px;
   position: relative;
+}
+.equilizer {
+  max-width: 560px;
 }
 
 #login-buttons {

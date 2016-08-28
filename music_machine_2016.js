@@ -146,6 +146,14 @@ if (Meteor.isClient) {
         setSpeed(slider.slide/50);
         return slider.slide;
       }
+    },
+  "sliderVal2":  function() {
+    var slider = MusicMachine.findOne();
+    if (slider) {
+        Template.instance().$('#slider2').data('uiSlider').value(slider.amplitude);
+        //setAmp(slider.amplitude);
+        return slider.amplitude;
+      }
     }
 
   });
@@ -273,10 +281,21 @@ if (Meteor.isClient) {
         var val = MusicMachine.findOne({});
         MusicMachine.update({ _id: val._id }, {$set: {slide: ui.value}});
     }, 50, { leading: false });
+    var amphandler = _.throttle(function(event, ui) {
+        var val = MusicMachine.findOne({});
+        MusicMachine.update({ _id: val._id }, {$set: {amplitude: ui.value}});
+    }, 50, { leading: false });
     
     if (!this.$('#slider1').data('uiSlider')) {
         $("#slider1").slider({
             slide: handler,
+            min: 0,
+            max: 100
+        });
+    }
+    if (!this.$('#slider2').data('uiSlider')) {
+        $("#slider2").slider({
+            slide: amphandler,
             min: 0,
             max: 100
         });
@@ -287,7 +306,7 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
 //      MusicMachine.remove({});
       if (MusicMachine.find().count() === 0) {
-      MusicMachine.insert({slide: 50});
+      MusicMachine.insert({slide: 50, amplitude:50});
 
     }
 }

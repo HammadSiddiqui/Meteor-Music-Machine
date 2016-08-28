@@ -2,38 +2,119 @@
 
 <br><br><br>
 <!-- Remember - if you want to control functions globaly, don't declare them as var. Just name them. -->
+<div class="row">
+    <div class="col-md-12">
+        <button class="startButton btn btn-primary">Start</button><br><br>
+    </div>
+</div>
 
-<button class="startButton">Start</button><br><br>
+<div class="row">
+    <div class="col-md-3">
+       <h4>Drums</h4>
+    </div>
+    <div class="col-md-3 pull-right">
+        <button class="myButton1 btn btn-success" type="button">ON</button>
+        <button class="myButton2 btn btn-warning" type="button">OFF</button>
+    </div>
+</div>
 
-<br>Drums		<button class="myButton1">ON</button>
-                    <button class="myButton2">OFF</button>
-<br>Baseline		<button class="myButton3">ON</button>
-                    <button class="myButton4">OFF</button>
-<br>Arp		<button class="myButton5">ON</button>
-                    <button class="myButton6">OFF</button>
-<br>Snare Drum		<button class="myButton7">ON</button>
-                    <button class="myButton8">OFF</button>
-<br>Hihat		<button class="myButton9">ON</button>
-                    <button class="myButton10">OFF</button>
-<br>Cymbal		<button class="myButton11">ON</button>
-                    <button class="myButton12">OFF</button>
-<br>bassdrum1		<button class="myButton13">ON</button>
-                    <button class="myButton14">OFF</button>
-<br>break		<button class="myButton15">ON</button>
-                    <button class="myButton16">OFF</button>
+<div class="row">
+    <div class="col-md-3">
+        <h4>Baseline</h4>
+    </div>
+    <div class="col-md-3 pull-right">
+        <button class="myButton3 btn btn-success" type="button">ON</button>
+        <button class="myButton4 btn btn-warning" type="button">OFF</button>
+    </div>
+</div>
 
- <br>
+<div class="row">
+    <div class="col-md-3">
+        <h4>Arp</h4>
+    </div>
+    <div class="col-md-3 pull-right">
+        <button class="myButton5 btn btn-success" type="button">ON</button>
+        <button class="myButton6 btn btn-warning" type="button">OFF</button>
+    </div>
+</div>
 
- <h2> {{startdac}} {{drums}} {{bass}} {{arp}} {{snaredrum1}} {{hithat2}} {{cymbal1}} {{bassdrum1}} {{break}}</h2>
+<div class="row">
+    <div class="col-md-3">
+        <h4>Snare Drum</h4>
+    </div>
+    <div class="col-md-3 pull-right">
+        <button class="myButton7 btn btn-success" type="button">ON</button>
+        <button class="myButton8 btn btn-warning" type="button">OFF</button>
+    </div>
+</div>
+
+    <div class="row">
+    <div class="col-md-3">
+        <h4>HiHat</h4>
+    </div>
+    <div class="col-md-3 pull-right">
+        <button class="myButton9 btn btn-success" type="button">ON</button>
+        <button class="myButton10 btn btn-warning" type="button">OFF</button>
+    </div>
+</div>
+<div class="row">
+   <div class="col-md-3">
+        <h4>Cymbal</h4>
+    </div>
+    <div class="col-md-3 pull-right">
+        <button class="myButton11 btn btn-success" type="button">ON</button>
+        <button class="myButton12 btn btn-warning" type="button">OFF</button>
+    </div>
+</div>
+<div class="row">
+   <div class="col-md-3">
+        <h4>Bass Drum</h4>
+    </div>
+    <div class="col-md-3 pull-right">
+        <button class="myButton13 btn btn-success" type="button">ON</button>
+        <button class="myButton14 btn btn-warning" type="button">OFF</button>
+    </div>
+</div>
+
+<div class="row">
+   <div class="col-md-3">
+        <h4>Break</h4>
+    </div>
+    <div class="col-md-3 pull-right">
+        <button class="myButton15 btn btn-success" type="button">ON</button>
+        <button class="myButton16 btn btn-warning" type="button">OFF</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2> {{startdac}} {{drums}} {{bass}} {{arp}} {{snaredrum1}} {{hithat2}} {{cymbal1}} {{bassdrum1}} {{break}}</h2>
+    </div>
+</div>
+
 
 <br>
-  <div id="slider1"></div>
-  <br>
-  Current Speed = {{sliderVal1}}
 
-  <div id="slider2"></div>
-  <br>
-  Current Amplitude = {{sliderVal2}}
+    <div class="row">
+        <div class="col-md-12">
+            Current Speed = {{sliderVal1}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="slider1"></div>
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="col-md-12">
+            Current Amplitude = {{sliderVal2}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="slider2"></div>
+        </div>
+    </div>
 
 </template>
